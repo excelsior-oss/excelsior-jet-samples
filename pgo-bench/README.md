@@ -1,14 +1,16 @@
-# Profile-Guided Optimization microbenchmark example
-Microbenchmark that models a polymorphic collection.
-Compiled with PGO, it shows a 8x performance boost compared to the default build.
-Try it yourself:
+# Profile-Guided Optimization Microbenchmark
 
-`mvn jet:build` -- to build in the default mode
+A microbenchmark that models iteration over a polymorphic collection.
+Enabling Profile-Guided Optimization delivers a 8x performance boost (tested with Excelsior JET 12.)
 
-`mvn jet:run` -- to run just built benchmark
+To try it yourself, [download an Excelsior JET Evaluation Package](https://www.excelsiorjet.com/evaluate), install it, and issue the following Maven commands:
 
-`mvn jet:profile` -- to collect the execution profile
+`mvn jet:build` -- build a native binary in the default mode
 
-`mvn jet:build` -- to rebuild the benchmark with the profile
+`mvn jet:run` -- run the binary just built
 
-`mvn jet:run` -- to run the benchmark with pgo enabled to enjoy 8x performance boost
+`mvn jet:profile` -- collect an execution profile
+
+`mvn jet:build` -- re-build (PGO will be enabled automatically)
+
+`mvn jet:run` -- run the benchmark again to observe the performance boost
