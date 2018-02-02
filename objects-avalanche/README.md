@@ -2,7 +2,9 @@
 Excelsior JET 14+. Build/run/package scripts provided for Windows and \*ix.**
 
 This benchmark models an application that runs many worker threads in parallel,
-with each thread allocating a short-lived object on the heap. 
+with each thread repeatedly allocating short-lived objects on the heap.
+
+You can find our own results [here](https://www.excelsiorjet.com/memory-manager-scalability).
 
 ## Building And Running
 
