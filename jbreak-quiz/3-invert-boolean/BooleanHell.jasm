@@ -1,0 +1,73 @@
+
+super public class BooleanHell
+	version 49:0
+{
+
+public static Method main:"([Ljava/lang/String;)V"
+	stack 2 locals 1
+{
+		// just to perform compilation of method before actual testing
+		bipush 0;
+		invokestatic	Method Inverter.invert:"(Z)Z";
+
+		bipush 0;
+		invokestatic	Method test:"(Z)V";
+
+		bipush 1;
+		invokestatic	Method test:"(Z)V";
+
+		bipush 2;
+		invokestatic	Method test:"(Z)V";
+
+		bipush 3;
+		invokestatic	Method test:"(Z)V";
+
+		bipush -1;
+		invokestatic	Method test:"(Z)V";
+
+		return;
+}
+
+static Method test:"(Z)V"
+	stack 2 locals 1
+{
+		iload_0;
+		invokestatic	Method printBoolean:"(Z)V";
+
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		ldc		String " -> ";
+		invokevirtual	Method java/io/PrintStream.print:"(Ljava/lang/String;)V";
+
+		iload_0;
+		invokestatic	Method Inverter.invert:"(Z)Z";
+		invokestatic	Method printBoolean:"(Z)V";
+
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		invokevirtual	Method java/io/PrintStream.println:"()V";
+
+		return;
+}
+
+static Method printBoolean:"(Z)V"
+	stack 2 locals 1
+{
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		iload_0;
+		invokevirtual	Method java/io/PrintStream.print:"(Z)V";
+
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		ldc		String " (";
+		invokevirtual	Method java/io/PrintStream.print:"(Ljava/lang/String;)V";
+
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		iload_0;
+		invokevirtual	Method java/io/PrintStream.print:"(I)V";
+
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		ldc		String ")";
+		invokevirtual	Method java/io/PrintStream.print:"(Ljava/lang/String;)V";
+
+		return;
+}
+
+}

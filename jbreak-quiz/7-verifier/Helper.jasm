@@ -1,0 +1,30 @@
+super class Helper
+	version 49:0
+{
+
+public static Method sayB:"()V"
+	stack 2 locals 0
+{
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		ldc	String "B";
+		invokevirtual	Method java/io/PrintStream.print:"(Ljava/lang/String;)V";
+		return;
+}
+
+public static Method sayC:"()V"
+	stack 2 locals 0
+{
+		getstatic	Field java/lang/System.out:"Ljava/io/PrintStream;";
+		ldc	String "C";
+		invokevirtual	Method java/io/PrintStream.print:"(Ljava/lang/String;)V";
+
+		// bad bytecode goes here
+		pop;
+		pop;
+		pop;
+		pop;
+
+		return;
+}
+
+}
